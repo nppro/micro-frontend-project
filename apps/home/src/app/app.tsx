@@ -3,7 +3,7 @@ import * as React from 'react';
 import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
-import { Ui, Navbar, Notification, Footer } from '@mf-store-apps/ui';
+import { Navbar, Notification, Footer } from '@mf-store-apps/ui';
 import Home from './home';
 
 const Shop = React.lazy(() => import('shop/Module'));

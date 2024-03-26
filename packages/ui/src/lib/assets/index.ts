@@ -9,6 +9,8 @@ import slider2 from './images/slide2.png';
 import slider3 from './images/slide3.png';
 import menu1 from './images/temporary/m1.png';
 import pizza1 from './images/temporary/p1.png';
+import offerProduct from './images/offerProduct.png';
+import offerBg from './images/offerBg.png';
 
 export const AssetsImage = {
   cart,
@@ -22,5 +24,7 @@ export const AssetsImage = {
   slider3,
   menu1,
   pizza1,
+  offerProduct,
+  offerBg,
 };
 export default AssetsImage;

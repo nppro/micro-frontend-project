@@ -31,7 +31,7 @@ const items: ItemType[] = [
 
 export function Featured() {
   return (
-    <section className="w-screen overflow-x-scroll text-red-500">
+    <section className="w-full overflow-x-auto text-red-500">
       {/* Wrapper item */}
       <div className="w-max flex">
         {items.map((item) => (
