@@ -15,7 +15,7 @@ export function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop />}></Route>
       </Routes>
 
       <Footer />

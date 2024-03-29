@@ -1,13 +1,16 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
 
-import NxWelcome from './nx-welcome';
+import { Link, Route, Routes } from 'react-router-dom';
+import { AssetsImage, Featured, Offer, Slider } from '@mf-store-apps/ui';
+import CategoryPage from './category';
+import MenuPage from './menu';
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="shop" />
-    </div>
+    <Routes>
+      <Route path="/" element={<MenuPage />} />
+      <Route path="/:slug" element={<CategoryPage />} />
+    </Routes>
   );
 }
 

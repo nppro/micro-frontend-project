@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mf-store-apps/models": ["packages/models/src/index.ts"],
       "@mf-store-apps/ui": ["packages/ui/src/index.ts"],
       "shop/Module": ["apps/shop/src/remote-entry.ts"]
     }
