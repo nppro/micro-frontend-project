@@ -35,7 +35,7 @@ function MenuPage() {
       <section className="p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center justify-center">
         {mockData.map((item) => (
           <Link
-            to={`/shop/${item.slug}`}
+            to={`/${item.slug}`}
             // to={`/shop/menu`}
             key={item.id}
             className="w-full h-1/3 bg-cover p-8 md:h-1/2 md:bg-center md:rounded-md md:shadow-sm"

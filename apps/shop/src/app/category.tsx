@@ -142,15 +142,32 @@ export function CategoryPage() {
     <section>
       {/* <h1>{title}</h1> */}
 
-      <div className="flex text-red-500">
+      <div className="flex text-red-500 flex-wrap">
         {pizzas.map((item) => (
-          <Link to={`/pizzas/${item.id}`} key={item.id}>
-            <div className="w-1/3">
+          <Link
+            to={`/product/${item.id}`}
+            key={item.id}
+            className="w-full h-[50vh] p-4 border-r-2 border-b-2 border-red-500 sm:w-1/2 lg:w-1/3 group flex flex-col justify-betwee even:bg-fuchsia-50"
+          >
+            <div className="relative h-[80%]">
               <img
                 src={item.img}
                 alt={`Pizza ${item.id}`}
-                className="w-full h-full object-cover"
+                className="object-contain w-full h-full"
               />
+            </div>
+            <div className="flex items-center justify-between font-bold min-h-[4rem]">
+              <h1 className="text-2xl uppercase px-2">{item.title}</h1>
+              <h2 className="text-xl group-hover:hidden">${item.price}</h2>
+              <button
+                className="hidden group-hover:block uppercase bg-red-500 text-white p-2 rounded-md font-semibold"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(item);
+                }}
+              >
+                Add To Cart
+              </button>
             </div>
           </Link>
         ))}
