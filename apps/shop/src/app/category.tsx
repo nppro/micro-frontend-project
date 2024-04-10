@@ -1,7 +1,5 @@
 import { Product } from '@mf-store-apps/models';
 import { AssetsImage } from '@mf-store-apps/ui';
-import React from 'react';
-import { Link } from 'react-router-dom';
 
 export type CategoryProps = {
   title: string;
@@ -144,10 +142,10 @@ export function CategoryPage() {
 
       <div className="flex text-red-500 flex-wrap">
         {pizzas.map((item) => (
-          <Link
-            to={`/product/${item.id}`}
+          <a
+            href={`/product/${item.id}`}
             key={item.id}
-            className="w-full h-[50vh] p-4 border-r-2 border-b-2 border-red-500 sm:w-1/2 lg:w-1/3 group flex flex-col justify-betwee even:bg-fuchsia-50"
+            className="w-full h-[50vh] md:h-[30vh] p-4 border-r-2 border-b-2 border-red-500 sm:w-1/2 lg:w-1/3 group flex flex-col justify-between even:bg-fuchsia-50"
           >
             <div className="relative h-[80%]">
               <img
@@ -169,7 +167,7 @@ export function CategoryPage() {
                 Add To Cart
               </button>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </section>

@@ -3,9 +3,16 @@ import { Navigate, RouteObject } from 'react-router-dom';
 import { Layout } from '../app/Layout';
 
 import Home from '../app/home';
-import Shop from '../components/Shop';
+
+// TODO:
+// - Create a factory function to return a component like Shop
+// - Input: appName
+// - Output: component
+// - How many components need to be created --- Based on Remotes Application
 
 const ShopLazy = lazy(() => import('../components/Shop'));
+// const ProductLazy = lazy(() => import('../components/Product'));
+const ProductLazy = lazy(() => import('product/Module'));
 
 export const routes: RouteObject[] = [
   {
@@ -29,6 +36,14 @@ export const routes: RouteObject[] = [
         element: (
           <Suspense fallback="Loading App2...">
             <ShopLazy />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/product/:id',
+        element: (
+          <Suspense fallback="Loading Product...">
+            <ProductLazy />
           </Suspense>
         ),
       },

@@ -17,6 +17,7 @@
     "paths": {
       "@mf-store-apps/models": ["packages/models/src/index.ts"],
       "@mf-store-apps/ui": ["packages/ui/src/index.ts"],
+      "product/Module": ["apps/product/src/remote-entry.ts"],
       "shop/Module": ["apps/shop/src/remote-entry.ts"]
     }
   },
