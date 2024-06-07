@@ -13,6 +13,8 @@ import Home from '../app/home';
 const ShopLazy = lazy(() => import('../components/Shop'));
 // const ProductLazy = lazy(() => import('../components/Product'));
 const ProductLazy = lazy(() => import('product/Module'));
+const CartLazy = lazy(() => import('cart/Module'));
+const AuthLazy = lazy(() => import('auth/Module'));
 
 export const routes: RouteObject[] = [
   {
@@ -44,6 +46,22 @@ export const routes: RouteObject[] = [
         element: (
           <Suspense fallback="Loading Product...">
             <ProductLazy />
+          </Suspense>
+        ),
+      },
+      {
+        path: `/cart/*`,
+        element: (
+          <Suspense fallback="Loading Cart...">
+            <CartLazy />
+          </Suspense>
+        ),
+      },
+      {
+        path: `/auth/*`,
+        element: (
+          <Suspense fallback="Loading Auth...">
+            <AuthLazy />
           </Suspense>
         ),
       },

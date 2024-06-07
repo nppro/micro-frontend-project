@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@mf-store-apps/models": ["packages/models/src/index.ts"],
+      "@mf-store-apps/store": ["packages/store/src/index.ts"],
       "@mf-store-apps/ui": ["packages/ui/src/index.ts"],
+      "auth/Module": ["apps/auth/src/remote-entry.ts"],
+      "cart/Module": ["apps/cart/src/remote-entry.ts"],
       "product/Module": ["apps/product/src/remote-entry.ts"],
       "shop/Module": ["apps/shop/src/remote-entry.ts"]
     }

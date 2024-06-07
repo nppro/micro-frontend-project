@@ -2,9 +2,26 @@
 
 import { mockData } from '@mf-store-apps/models';
 import Price from './Price';
+import { CartItem, useStore } from '@mf-store-apps/store';
 
 export function App() {
   const singleProduct = mockData[2];
+  const { addToCart } = useStore();
+
+  const handleAddtoCart = (
+    total: number,
+    quantity: number,
+    selected: number
+  ) => {
+    const item: CartItem = {
+      product: singleProduct,
+      quantity: quantity,
+      totalPrice: total,
+      selectedOption: singleProduct.options?.at(selected),
+    };
+
+    addToCart(item);
+  };
 
   return (
     <article className="p-4 lg:px-20 xl:px-40 h-[calc(100vh-10rem)] flex flex-col justify-around text-red-500 md:flex-row md:justify-between md:items-center">
@@ -25,6 +42,7 @@ export function App() {
           price={singleProduct.price}
           id={singleProduct.id}
           options={singleProduct.options}
+          addToCart={handleAddtoCart}
         />
       </section>
     </article>

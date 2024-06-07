@@ -25,6 +25,7 @@ import pizza12 from './images/temporary/p12.png';
 
 import offerProduct from './images/offerProduct.png';
 import offerBg from './images/offerBg.png';
+import loginBg from './images/loginBg.png';
 
 export const AssetsImage = {
   cart,
@@ -53,5 +54,6 @@ export const AssetsImage = {
   pizza12,
   offerProduct,
   offerBg,
+  loginBg,
 };
 export default AssetsImage;

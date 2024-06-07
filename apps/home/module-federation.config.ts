@@ -15,7 +15,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['shop', 'product'],
+  remotes: ['shop', 'product', 'cart', 'auth'],
   shared,
 };
 

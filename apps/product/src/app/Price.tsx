@@ -1,3 +1,4 @@
+import { CartItem, useStore } from '@mf-store-apps/store';
 import { Slider } from '@mf-store-apps/ui';
 import React, { useEffect, useState } from 'react';
 
@@ -5,9 +6,10 @@ type Props = {
   price: number;
   id: number;
   options?: { title: string; additionalPrice: number }[];
+  addToCart: (total: number, quantity: number, selected: number) => void;
 };
 
-function Price({ price, id, options }: Props) {
+function Price({ price, id, options, addToCart }: Props) {
   const [total, setTotal] = useState(price);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
@@ -62,7 +64,10 @@ function Price({ price, id, options }: Props) {
             </button>
           </div>
         </div>
-        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-400">
+        <button
+          className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-400 text-center"
+          onClick={() => addToCart(total, quantity, selected)}
+        >
           Add to Cart
         </button>
       </div>

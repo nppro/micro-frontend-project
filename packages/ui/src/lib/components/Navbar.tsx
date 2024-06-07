@@ -4,6 +4,8 @@ import Menu from './Menu';
 import CartIcon from './CartIcon';
 import AssetsImage from '../assets';
 
+// TODO: Should refactor - not depend on store in here
+
 export function Navbar() {
   const [user, setUser] = useState(false);
 
@@ -36,11 +38,7 @@ export function Navbar() {
           <img src={AssetsImage.phone} alt="" width={20} height={20} />
           <span>123 456 789</span>
         </div>
-        {!user ? (
-          <Link to="/login">Login</Link>
-        ) : (
-          <Link to="/login">Order</Link>
-        )}
+        {!user ? <Link to="/auth">Login</Link> : <Link to="/login">Order</Link>}
         <CartIcon />
       </div>
     </nav>
