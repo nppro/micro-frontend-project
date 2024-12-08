@@ -1,6 +1,31 @@
 import { AssetsImage } from '@mf-store-apps/ui';
+import { useState } from 'react';
+import axios from 'axios';
 
 export function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const url = 'http://localhost:8080/api/v1/auth/authenticate';
+
+  const login = (e: any): void => {
+    e.preventDefault();
+    console.log('login');
+
+    if (!email || !password) {
+      return;
+    }
+
+    axios
+      .post(url, {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <main className="p-4 md:px-8 lg:px-20 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center ">
       <article className="flex flex-col h-full md:h-2/3 shadow-lg rounded-md md:flex-row md:w-full lg:w-[-60%] 2xl:w-1/2">
@@ -25,6 +50,28 @@ export function App() {
           <p className="text-sm">
             Have a problems? <a className="underline">Contact us</a>
           </p>
+
+          <form onSubmit={(e) => login(e)}>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit">Login</button>
+          </form>
         </section>
       </article>
     </main>
